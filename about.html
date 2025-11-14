@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tentang Kami</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fff3e0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ec6f09;
+            padding: 15px;
+            color: white;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav{display:flex;align-items:center;justify-content:center;gap:12px}
+        .dropdown{position:relative;display:inline-block}
+        .dropbtn{background:transparent;color:white;border:none;font-weight:bold;cursor:pointer;padding:6px 8px;font-size:16px}
+        .dropdown-content{display:none;position:absolute;background:#fff;min-width:140px;box-shadow:0 6px 12px rgba(0,0,0,0.12);border-radius:6px;right:0;z-index:100;overflow:hidden}
+        .dropdown-content a{color:#333;padding:8px 12px;text-decoration:none;display:block}
+        .dropdown-content a:hover{background-color:#fff3e0}
+        .dropdown-content.show{display:block}
+        main {
+            padding: 20px;
+        }
+        .info-box {
+            background: #fff8e1;
+            border: 2px solid #ffa726;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 500px;
+            box-shadow: 0 2px 8px rgba(255,140,0,0.10);
+        }
+        footer {
+            background-color: antiquewhite;
+            padding: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tentang Kami</h1>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="adit.html">Tentang Kami</a>
+            <div class="dropdown" id="loginDropdown">
+                <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Login ▾</button>
+                <div class="dropdown-content" aria-label="submenu">
+                    <a href="menu login.html">Sign In</a>
+                    <a href="menu login.html">Sign Up</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="info-box">
+            <h2>Informasi Website</h2>
+            <p>
+                Website ini dibuat oleh <b>Aditya</b>, seorang pelajar SMK dari Soreang yang memiliki minat di bidang koding dan dunia digital.
+            </p>
+            <p>
+                Website ini adalah platform jual beli item game <b>Growtopia</b> seperti Diamond Lock, World Lock, dan Blue Gems Lock. Tujuan website ini adalah memudahkan pemain Growtopia untuk melakukan transaksi item dengan aman, mudah, dan terpercaya.
+            </p>
+            <p>
+                Jika ada pertanyaan atau ingin kerja sama, silakan hubungi melalui kontak yang tersedia.
+            </p>
+        </div>
+    </main>
+    <div style="text-align: center; margin: 20px 0;">
+    <a href="https://www.instagram.com/adityakustiawan02?igsh=MW51NTIwcHkzc2Zu" target="_blank" style="color: #ec6f09; font-weight: bold; text-decoration: none;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="40" style="vertical-align: middle;">
+        contact person
+    </a>
+</div>
+    <footer>
+        <p>copyright by adit</p>
+    </footer>
+    <script>
+        (function(){
+            var drop = document.getElementById('loginDropdown'); if(!drop) return;
+            var btn = drop.querySelector('.dropbtn'); var menu = drop.querySelector('.dropdown-content');
+            function closeMenus(){ menu.classList.remove('show'); btn.setAttribute('aria-expanded','false'); }
+            btn.addEventListener('click', function(e){ e.stopPropagation(); menu.classList.toggle('show'); btn.setAttribute('aria-expanded', menu.classList.contains('show') ? 'true' : 'false'); });
+            document.addEventListener('click', closeMenus);
+        })();
+    </script>
+</body>
+</html>
