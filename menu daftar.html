@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Daftar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Daftar</h2>
+        <form id="registerForm" action="index.html" method="post">
+            <label for="name">Nama:</label>
+            <input id="name" type="text" name="name" placeholder="Nama lengkap" required>
+
+            <label for="email">Email:</label>
+            <input id="email" type="email" name="email" placeholder="email@contoh.com" required>
+
+            <label for="password">Kata Sandi:</label>
+            <input id="password" type="password" name="password" placeholder="Minimal 6 karakter" minlength="6" required>
+
+            <label for="confirm">Konfirmasi Kata Sandi:</label>
+            <input id="confirm" type="password" name="confirm" placeholder="Ketik ulang kata sandi" minlength="6" required>
+
+            <button type="submit">Daftar</button>
+        </form>
+        <p>
+            <a href="menu login.html">Sudah punya akun? Masuk</a>
+        </p>
+
+        <script>
+            // Simple client-side validation for password confirmation
+            document.getElementById('registerForm').addEventListener('submit', function(e){
+                var pw = document.getElementById('password').value;
+                var cpw = document.getElementById('confirm').value;
+                if(pw !== cpw){
+                    e.preventDefault();
+                    alert('Kata sandi dan konfirmasi tidak cocok. Silakan coba lagi.');
+                    document.getElementById('confirm').focus();
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>
